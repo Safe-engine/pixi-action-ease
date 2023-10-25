@@ -1,12 +1,12 @@
 {
   "name": "pixi-action-ease",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "pixijs action and ease",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/lib/index.d.ts",
   "scripts": {
-    "build": "tsc -d --declarationDir dist/lib --declarationMap --emitDeclarationOnly",
+    "build": "tsc -d --declarationDir dist/lib --declarationMap",
     "start": "npm publish"
   },
   "keywords": [],
