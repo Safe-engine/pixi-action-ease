@@ -1,0 +1,21 @@
+{
+  "name": "pixi-action-ease",
+  "version": "1.0.1",
+  "description": "pixijs action and ease",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/lib/index.d.ts",
+  "scripts": {
+    "build": "tsc -d --declarationDir dist/lib --declarationMap --emitDeclarationOnly",
+    "start": "npm publish"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "pixi.js": "^7.2.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
