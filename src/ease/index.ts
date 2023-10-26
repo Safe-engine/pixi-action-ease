@@ -34,10 +34,11 @@ import {
 } from './easingsFunctions'
 
 function wrapEase(action: Action, fun) {
-  action.update = function (sprite, delta, ms) {
-    action.update(sprite, fun(delta), fun(ms))
-  }
-  return action
+  return Object.assign({}, action, {
+    update: function (sprite, delta, ms) {
+      action.update(sprite, fun(delta), fun(ms))
+    }
+  })
 }
 
 export class EaseLinear {

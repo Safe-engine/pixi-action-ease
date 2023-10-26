@@ -1,6 +1,6 @@
 {
   "name": "pixi-action-ease",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "pixijs action and ease",
   "type": "module",
   "main": "./dist/index.js",
@@ -10,7 +10,10 @@
     "start": "npm publish"
   },
   "keywords": [],
-  "author": "",
+  "author": "antn9x",
+  "repository": {
+    "url": "https://github.com/Safe-engine/pixi-action-ease"
+  },
   "license": "ISC",
   "dependencies": {
     "pixi.js": "^7.2.4"
