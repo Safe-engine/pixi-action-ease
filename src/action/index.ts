@@ -15,59 +15,60 @@ import { Spawn } from './ActionSpawn'
 import { DelayTime } from './ActionDelay'
 import { CallFunc } from './ActionCallFunc'
 import { default as Action } from './Action'
+import { Color } from 'pixi.js'
 
 export { Action }
 export const actionManager = new ActionManager()
 
-export function moveToAction(x: number, y: number, t: number) {
+export function moveToAction(t: number, { x, y }: { x: number, y: number }) {
   return new MoveTo(x, y, t)
 }
-export function moveByAction(x: number, y: number, t: number) {
+export function moveByAction(t: number, { x, y }: { x: number, y: number }) {
   return new MoveBy(x, y, t)
 }
-export function scaleToAction(x: number, y: number, t: number) {
+export function scaleToAction(t: number, { x, y }: { x: number, y: number }) {
   return new ScaleTo(x, y, t)
 }
-export function scaleByAction(x: number, y: number, t: number) {
+export function scaleByAction(t: number, { x, y }: { x: number, y: number }) {
   return new ScaleBy(x, y, t)
 }
-export function rotateToAction(r: number, t: number) {
+export function rotateToAction(t: number, r: number) {
   return new RotateTo(r, t)
 }
-export function rotateByAction(r: number, t: number) {
+export function rotateByAction(t: number, r: number) {
   return new RotateBy(r, t)
 }
 export function fadeInAction(t: number) {
   return new FadeIn(t)
 }
-export function fadeOutAction(x: number, y: number, t: number) {
+export function fadeOutAction(t: number) {
   return new FadeOut(t)
 }
-export function skewToAction(x: number, y: number, t: number) {
+export function skewToAction(t: number, { x, y }: { x: number, y: number }) {
   return new SkewTo(x, y, t)
 }
-export function skewByAction(x: number, y: number, t: number) {
+export function skewByAction(t: number, { x, y }: { x: number, y: number }) {
   return new SkewBy(x, y, t)
 }
-export function pivotToAction(x: number, y: number, t: number) {
+export function pivotToAction(t: number, { x, y }: { x: number, y: number }) {
   return new PivotTo(x, y, t)
 }
-export function pivotByAction(x: number, y: number, t: number) {
+export function pivotByAction(t: number, { x, y }: { x: number, y: number }) {
   return new PivotBy(x, y, t)
 }
-export function blinkAction(count: number, t: number) {
+export function blinkAction(t: number, count: number) {
   return new Blink(count, t)
 }
-export function tintToAction(tint: any, t: number) {
+export function tintToAction(t: number, tint: Color) {
   return new TintTo(tint, t)
 }
-export function tintByAction(tint: number, t: number) {
+export function tintByAction(t: number, tint: Color) {
   return new TintBy(tint, t)
 }
-export function alphaToAction(alpha: number, t: number) {
+export function alphaToAction(t: number, alpha: number) {
   return new AlphaTo(alpha, t)
 }
-export function alphaByAction(alpha: number, t: number) {
+export function alphaByAction(t: number, alpha: number) {
   return new AlphaBy(alpha, t)
 }
 export function repeatAction(action: Action, count: number) {
