@@ -7,6 +7,7 @@ export class Animation extends utils.EventEmitter {
   _started: boolean
   _ended: boolean
   _active: boolean
+  isPause: boolean = false
   constructor(sprite, action) {
     super()
     this._id = `_${utils.uid()}`
@@ -27,8 +28,9 @@ export class Animation extends utils.EventEmitter {
     }
 
     // do some update
-    this._ended = this.action.update(this.sprite, delta, deltaMS)
-
+    if (!this.isPause) {
+      this._ended = this.action.update(this.sprite, delta, deltaMS)
+    }
     if (this._ended && this._active) {
       // end event
       this.emit('end', deltaMS)
