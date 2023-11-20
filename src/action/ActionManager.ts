@@ -1,9 +1,10 @@
-import { utils } from 'pixi.js'
+import { Sprite, utils } from 'pixi.js'
+import Action from './Action'
 
 export class Animation extends utils.EventEmitter {
   _id: string
-  sprite: any
-  action: any
+  sprite: Sprite
+  action: Action
   _started: boolean
   _ended: boolean
   _active: boolean
@@ -48,8 +49,8 @@ export class Animation extends utils.EventEmitter {
 }
 
 export default class ActionManager {
-  actions: {}
-  _actionsToDelete: any[]
+  actions: { [key: string]: Animation }
+  _actionsToDelete: Animation[]
   _last: number
   constructor() {
     this.actions = {} // the actions need to be done.
@@ -58,7 +59,7 @@ export default class ActionManager {
     this._last = 0
   }
 
-  update(delta) {
+  update(delta: number) {
     let deltaMS
     // calculate deltaMS
     if (!delta && delta !== 0) {
@@ -93,7 +94,7 @@ export default class ActionManager {
   }
 
   // run action
-  runAction(sprite, action) {
+  runAction(sprite: Sprite, action: Action) {
     // add into actions to be done.
     const animation = new Animation(sprite, action)
     this.actions[animation._id] = animation
@@ -101,12 +102,12 @@ export default class ActionManager {
   }
 
   // cancel action
-  cancelAction(animation) {
+  cancelAction(animation: Animation) {
     // add into to be deleted.
     this._actionsToDelete.push(animation)
   }
 
-  _remove(animation) {
+  _remove(animation: Animation) {
     delete this.actions[animation._id]
   }
 
