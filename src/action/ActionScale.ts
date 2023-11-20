@@ -18,7 +18,6 @@ export class ScaleTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    // 最终的动画逻辑
     const scale = sprite.scale
     const scaleX = ((this.x - scale.x) / this._time) * deltaMS
     const scaleY = ((this.y - scale.y) / this._time) * deltaMS

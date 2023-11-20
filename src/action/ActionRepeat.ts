@@ -13,7 +13,6 @@ export class Repeat extends Action {
   }
   reset() {
     this._count = this.count
-    // 无效数字的时候，为无穷大
     if (!this._count) this._count = Infinity
   }
   // if end return true, if not end return false
@@ -23,7 +22,6 @@ export class Repeat extends Action {
       this.action.reset()
       this._count = this._count - 1
     }
-    // 循环结束
     if (this._count <= 0) {
       this.reset()
       return true

@@ -16,7 +16,7 @@ export class Blink extends Action {
   }
   reset() {
     this._count = this.count * 2
-    this._gap = this.time / this._count // 每次的时间
+    this._gap = this.time / this._count
     this._timer = 0
   }
   // if end return true, if not end return false

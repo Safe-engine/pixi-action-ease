@@ -18,7 +18,6 @@ export class MoveTo extends Action {
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
-    // 最终的动画逻辑
     const pos = sprite.position
     const speedX = ((this.x - pos.x) / this._time) * deltaMS
     const speedY = ((this.y - pos.y) / this._time) * deltaMS

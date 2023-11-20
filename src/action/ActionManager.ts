@@ -9,7 +9,7 @@ export class Animation extends utils.EventEmitter {
   _ended: boolean
   _active: boolean
   isPause: boolean = false
-  constructor(sprite, action) {
+  constructor(sprite: Sprite, action: Action) {
     super()
     this._id = `_${utils.uid()}`
     this.sprite = sprite
@@ -20,7 +20,7 @@ export class Animation extends utils.EventEmitter {
     this._active = false
   }
 
-  update(delta, deltaMS) {
+  update(delta: number, deltaMS: number) {
     if (!this._started) {
       // start event
       this.emit('start', deltaMS)
@@ -29,7 +29,7 @@ export class Animation extends utils.EventEmitter {
     }
 
     // do some update
-    if (!this.isPause) {
+    if (!this.isPause && !this.sprite.destroyed) {
       this._ended = this.action.update(this.sprite, delta, deltaMS)
     }
     if (this._ended && this._active) {
@@ -63,14 +63,11 @@ export default class ActionManager {
     let deltaMS
     // calculate deltaMS
     if (!delta && delta !== 0) {
-      // 如果没有指定 delta 时间
       deltaMS = this._getDeltaMS()
       delta = deltaMS / 1000
     } else {
-      // 如果指定时间，则直接使用
       deltaMS = delta * 1000
     }
-    // 先循环执行动作.
     /* eslint no-restricted-syntax: 1 */
     for (const _id in this.actions) {
       if (Object.prototype.hasOwnProperty.call(this.actions, _id)) {
@@ -84,7 +81,6 @@ export default class ActionManager {
       }
     }
 
-    // 后删除已经结束，或者终止的动作
     if (this._actionsToDelete.length) {
       for (let i = 0; i < this._actionsToDelete.length; i += 1) {
         this._remove(this._actionsToDelete[i])
@@ -111,7 +107,6 @@ export default class ActionManager {
     delete this.actions[animation._id]
   }
 
-  // 获得两个 frame 之间的时间，用于后续进行动作计算
   _getDeltaMS() {
     if (this._last === 0) this._last = Date.now()
     const now = Date.now()

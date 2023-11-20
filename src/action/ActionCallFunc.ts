@@ -12,7 +12,6 @@ export class CallFunc extends Action {
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
     this.func()
-    // 直接完之后结束
     this.reset()
     return true
   }

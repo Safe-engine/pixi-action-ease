@@ -15,7 +15,7 @@ export class Sequence extends Action {
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
     if (this._index >= this.actions.length) {
-      return true // 所有 action 结束
+      return true
     }
     const action = this.actions[this._index]
 
