@@ -6,6 +6,9 @@ export class Blink extends Action {
   _count: number
   _gap: number
   _timer: number
+  static create(t: number, count: number) {
+    return new Blink(count, t)
+  }
   constructor(count, time) {
     super()
 

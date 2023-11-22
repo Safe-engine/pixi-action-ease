@@ -1,7 +1,10 @@
 import Action from './Action'
 
 export class Spawn extends Action {
-  actions: any
+  actions: Action[] = []
+  static create(...action: Action[]) {
+    return new Spawn(...action)
+  }
   constructor(...actions) {
     super()
     this.actions = actions

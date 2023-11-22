@@ -4,6 +4,9 @@ export class FadeIn extends Action {
   time: number
   alpha: number
   _time: any
+  static create(t: number) {
+    return new FadeIn(t)
+  }
   constructor(time) {
     super()
     this.time = time * 1000
@@ -36,6 +39,9 @@ export class FadeOut extends Action {
   time: number
   alpha: number
   _time: any
+  static create(t: number) {
+    return new FadeOut(t)
+  }
   constructor(time) {
     super()
     this.time = time * 1000

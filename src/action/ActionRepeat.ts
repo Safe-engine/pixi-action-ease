@@ -4,6 +4,9 @@ export class Repeat extends Action {
   action: any
   count: any
   _count: any
+  static create(action: Action, count: number) {
+    return new Repeat(action, count)
+  }
   constructor(action, count) {
     super()
     this.action = action

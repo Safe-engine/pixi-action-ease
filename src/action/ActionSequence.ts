@@ -1,8 +1,11 @@
 import Action from './Action'
 
 export class Sequence extends Action {
-  actions: any[]
+  actions: Action[]
   _index: number
+  static create(...action: Action[]) {
+    return new Sequence(...action)
+  }
   constructor(...actions) {
     super()
     this.actions = actions

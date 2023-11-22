@@ -4,6 +4,9 @@ export class RotateTo extends Action {
   time: number
   rotation: any
   _time: any
+  static create(t: number, r: number) {
+    return new RotateTo(r, t)
+  }
   constructor(rotation, time) {
     super()
     this.time = time * 1000
@@ -37,6 +40,9 @@ export class RotateBy extends Action {
   rotation: any
   _time: any
   trotation = null
+  static create(t: number, r: number) {
+    return new RotateBy(r, t)
+  }
   constructor(rotation, time) {
     super()
     this.time = time * 1000

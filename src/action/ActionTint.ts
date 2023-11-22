@@ -1,9 +1,13 @@
+import { Color } from 'pixi.js'
 import Action from './Action'
 
 export class TintTo extends Action {
   time: number
   tint: any
   _time: any
+  static create(t: number, tint: Color) {
+    return new TintTo(tint, t)
+  }
   constructor(tint, time) {
     super()
     this.time = time * 1000
@@ -36,6 +40,9 @@ export class TintBy extends Action {
   tint: any
   _time: any
   ttint = null
+  static create(t: number, tint: Color) {
+    return new TintBy(tint, t)
+  }
   constructor(tint, time) {
     super()
     this.time = time * 1000

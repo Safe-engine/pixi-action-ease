@@ -5,6 +5,9 @@ export class ScaleTo extends Action {
   x: any
   y: any
   _time: any
+  static create(t: number, { x, y }: { x: number, y: number }) {
+    return new ScaleTo(x, y, t)
+  }
   constructor(scaleX, scaleY, time) {
     super()
     this.time = time * 1000
@@ -44,6 +47,9 @@ export class ScaleBy extends Action {
   _time: any
   tx = null
   ty = null
+  static create(t: number, { x, y }: { x: number, y: number }) {
+    return new ScaleBy(x, y, t)
+  }
   constructor(scaleX, scaleY, time) {
     super()
     this.time = time * 1000

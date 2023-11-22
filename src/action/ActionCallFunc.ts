@@ -2,6 +2,9 @@ import Action from './Action'
 
 export class CallFunc extends Action {
   func: any
+  static create(func: () => void) {
+    return new CallFunc(func)
+  }
   constructor(func) {
     super()
     this.func = func || function () { }

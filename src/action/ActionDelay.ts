@@ -3,6 +3,10 @@ import Action from './Action'
 export class DelayTime extends Action {
   time: number
   _time: any
+  
+static create(t: number) {
+  return new DelayTime(t)
+}
   constructor(time) {
     super()
     this.time = time * 1000

@@ -4,6 +4,9 @@ export class AlphaTo extends Action {
   time: number
   alpha: any
   _time: any
+  static create(t: number, alpha: number) {
+    return new AlphaTo(alpha, t)
+  }
   constructor(alpha, time) {
     super()
     this.time = time * 1000
@@ -36,6 +39,9 @@ export class AlphaBy extends Action {
   alpha: any
   _time: any
   talpha = null
+  static create(t: number, alpha: number) {
+    return new AlphaBy(alpha, t)
+  }
   constructor(alpha, time) {
     super()
     this.time = time * 1000

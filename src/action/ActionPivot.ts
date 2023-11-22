@@ -5,6 +5,9 @@ export class PivotTo extends Action {
   x: any
   y: any
   _time: any
+  static create(t: number, { x, y }: { x: number, y: number }) {
+    return new PivotTo(x, y, t)
+  }
   constructor(x, y, time) {
     super()
     this.time = time * 1000
@@ -45,6 +48,9 @@ export class PivotBy extends Action {
   _time: any
   tx = null
   ty = null
+  static create(t: number, { x, y }: { x: number, y: number }) {
+    return new PivotBy(x, y, t)
+  }
   constructor(x, y, time) {
     super()
     this.time = time * 1000
