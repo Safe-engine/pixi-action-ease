@@ -6,6 +6,8 @@ export class ScaleTo extends Action {
   y: any
   _time: any
   static create(t: number, { x, y }: { x: number, y: number }) {
+    if (!y)
+      return new ScaleTo(x, x, t)
     return new ScaleTo(x, y, t)
   }
   constructor(scaleX, scaleY, time) {
@@ -47,7 +49,9 @@ export class ScaleBy extends Action {
   _time: any
   tx = null
   ty = null
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: number, y?: number) {
+    if (!y)
+      return new ScaleBy(x, x, t)
     return new ScaleBy(x, y, t)
   }
   constructor(scaleX, scaleY, time) {

@@ -5,7 +5,9 @@ export class SkewTo extends Action {
   x: any
   y: any
   _time: any
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: number, y?: number) {
+    if (!y)
+      return new SkewTo(x, x, t)
     return new SkewTo(x, y, t)
   }
   constructor(x, y, time) {
@@ -47,7 +49,9 @@ export class SkewBy extends Action {
   _time: any
   tx = null
   ty = null
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: number, y?: number) {
+    if (!y)
+      return new SkewBy(x, x, t)
     return new SkewBy(x, y, t)
   }
   constructor(x, y, time) {
