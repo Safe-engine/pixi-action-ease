@@ -5,7 +5,7 @@ export class ScaleTo extends Action {
   x: any
   y: any
   _time: any
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: number, y?: number) {
     if (!y)
       return new ScaleTo(x, x, t)
     return new ScaleTo(x, y, t)
