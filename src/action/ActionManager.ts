@@ -1,7 +1,7 @@
-import { Sprite, utils } from 'pixi.js'
+import { Sprite, EventEmitter, uid } from 'pixi.js'
 import Action from './Action'
 
-export class Animation extends utils.EventEmitter {
+export class Animation extends EventEmitter {
   _id: string
   sprite: Sprite
   action: Action
@@ -11,7 +11,7 @@ export class Animation extends utils.EventEmitter {
   isPause: boolean = false
   constructor(sprite: Sprite, action: Action) {
     super()
-    this._id = `_${utils.uid()}`
+    this._id = `_${uid()}`
     this.sprite = sprite
     this.action = action
 
@@ -48,7 +48,7 @@ export class Animation extends utils.EventEmitter {
   }
 }
 
-export default class ActionManager {
+export class ActionManager {
   actions: { [key: string]: Animation }
   _actionsToDelete: Animation[]
   _last: number
@@ -115,3 +115,4 @@ export default class ActionManager {
     return deltaMS
   }
 }
+export const actionManager = new ActionManager()

@@ -98,8 +98,7 @@ export class EaseQuartOut {
 
 export class EaseQuartInOut {
   static create(action: Action) {
-    return wrapEase(action, easeInBack)
-    easeInOutQuart
+    return wrapEase(action, easeInOutQuart)
   }
 }
 
@@ -117,8 +116,7 @@ export class EaseQuintOut {
 
 export class EaseQuintInOut {
   static create(action: Action) {
-    return wrapEase(action, easeInBack)
-    easeInOutQuint
+    return wrapEase(action, easeInOutQuint)
   }
 }
 
@@ -209,8 +207,7 @@ export class EaseElasticOut {
 
 export class EaseElasticInOut {
   static Create(action: Action) {
-    return wrapEase(action, easeInBack)
-    easeInOutElastic
+    return wrapEase(action, easeInOutElastic)
   }
 }
 
@@ -228,7 +225,6 @@ export class EaseBounceOut {
 
 export class EaseBounceInOut {
   static create(action: Action) {
-    return wrapEase(action, easeInBack)
-    easeInOutBounce
+    return wrapEase(action, easeInOutBounce)
   }
 }
