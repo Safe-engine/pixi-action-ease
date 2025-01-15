@@ -9,11 +9,11 @@ import { actionManager } from 'pixi-action-ease'
   })
 ```
 ```
-import { CallFunc, MoveBy, Sequence } from 'pixi-action-ease'
+import { callFunc, moveBy, sequence } from 'pixi-action-ease'
   const sprite = new Sprite('frame')
-  const seq = Sequence.create(
-    MoveBy.create(2, Vec2(0, 20)),
-    CallFunc.create(() => {
+  const seq = sequence(
+    moveBy(2, Vec2(0, 20)),
+    callFunc(() => {
       sprite.destroy()
     }),
   )

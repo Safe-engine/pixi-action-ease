@@ -1,16 +1,39 @@
-export { Animation, ActionManager, actionManager } from './ActionManager'
-export { MoveTo, MoveBy } from './ActionMove'
-export { ScaleTo, ScaleBy } from './ActionScale'
-export { RotateTo, RotateBy } from './ActionRotate'
-export { FadeIn, FadeOut } from './ActionFade'
-export { SkewTo, SkewBy } from './ActionSkew'
-export { PivotTo, PivotBy } from './ActionPivot'
-export { Blink } from './ActionBlink'
-export { TintTo, TintBy } from './ActionTint'
-export { AlphaTo, AlphaBy } from './ActionAlpha'
-export { Repeat } from './ActionRepeat'
-export { Sequence } from './ActionSequence'
-export { Spawn } from './ActionSpawn'
-export { DelayTime } from './ActionDelay'
-export { CallFunc } from './ActionCallFunc'
 export { default as Action } from './Action'
+export { ActionManager, actionManager, Animation } from './ActionManager'
+import { AlphaBy, AlphaTo } from './ActionAlpha'
+import { Blink } from './ActionBlink'
+import { CallFunc } from './ActionCallFunc'
+import { DelayTime } from './ActionDelay'
+import { FadeIn, FadeOut } from './ActionFade'
+import { MoveBy, MoveTo } from './ActionMove'
+import { PivotBy, PivotTo } from './ActionPivot'
+import { Repeat } from './ActionRepeat'
+import { RotateBy, RotateTo } from './ActionRotate'
+import { ScaleBy, ScaleTo } from './ActionScale'
+import { Sequence } from './ActionSequence'
+import { SkewBy, SkewTo } from './ActionSkew'
+import { Spawn } from './ActionSpawn'
+import { TintBy, TintTo } from './ActionTint'
+
+export const moveTo = MoveTo.create;
+export const scaleTo = ScaleTo.create;
+export const rotateTo = RotateTo.create;
+export const fadeIn = FadeIn.create;
+export const skewTo = SkewTo.create;
+export const pivotTo = PivotTo.create;
+export const tintTo = TintTo.create;
+export const alphaTo = AlphaTo.create;
+export const blink = Blink.create;
+export const repeat = Repeat.create;
+export const sequence = Sequence.create;
+export const spawn = Spawn.create;
+export const delayTime = DelayTime.create;
+export const callFunc = CallFunc.create;
+export const moveBy = MoveBy.create;
+export const scaleBy = ScaleBy.create;
+export const rotateBy = RotateBy.create;
+export const fadeOut = FadeOut.create;
+export const skewBy = SkewBy.create;
+export const pivotBy = PivotBy.create;
+export const tintBy = TintBy.create;
+export const alphaBy = AlphaBy.create;

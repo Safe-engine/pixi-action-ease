@@ -1,37 +1,5 @@
 import Action from '../action/Action'
-import {
-  linear,
-  easeInQuad,
-  easeOutQuad,
-  easeInOutQuad,
-  easeInCubic,
-  easeOutCubic,
-  easeInOutCubic,
-  easeInQuart,
-  easeOutQuart,
-  easeInOutQuart,
-  easeInQuint,
-  easeOutQuint,
-  easeInOutQuint,
-  easeInSine,
-  easeOutSine,
-  easeInOutSine,
-  easeInExpo,
-  easeOutExpo,
-  easeInOutExpo,
-  easeInCirc,
-  easeOutCirc,
-  easeInOutCirc,
-  easeInBack,
-  easeOutBack,
-  easeInOutBack,
-  easeInElastic,
-  easeOutElastic,
-  easeInOutElastic,
-  easeInBounce,
-  easeOutBounce,
-  easeInOutBounce,
-} from './easingsFunctions'
+import * as easing from './easingsFunctions'
 
 function wrapEase(action: Action, fun) {
   return Object.assign({}, action, {
@@ -41,190 +9,126 @@ function wrapEase(action: Action, fun) {
   })
 }
 
-export class EaseLinear {
-  static create(action: Action) {
-    return wrapEase(action, linear)
-  }
+export function easeLinear(action: Action) {
+  return wrapEase(action, easing.linear)
 }
 
-export class EaseQuadIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInQuad)
-  }
+export function easeQuadIn(action: Action) {
+  return wrapEase(action, easing.easeInQuad)
 }
 
-export class EaseQuadOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutQuad)
-  }
+export function easeQuadOut(action: Action) {
+  return wrapEase(action, easing.easeOutQuad)
 }
 
-export class EaseQuadInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutQuad)
-  }
+export function easeQuadInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutQuad)
 }
 
-export class EaseCubicIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInCubic)
-  }
+export function easeCubicIn(action: Action) {
+  return wrapEase(action, easing.easeInCubic)
 }
 
-export class EaseCubicOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutCubic)
-  }
+export function easeCubicOut(action: Action) {
+  return wrapEase(action, easing.easeOutCubic)
 }
 
-export class EaseCubicInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInBack)
-    easeInOutCubic
-  }
+export function easeCubicInOut(action: Action) {
+  return wrapEase(action, easing.easeInBack)
 }
 
-export class EaseQuartIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInQuart)
-  }
+export function easeQuartIn(action: Action) {
+  return wrapEase(action, easing.easeInQuart)
 }
 
-export class EaseQuartOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutQuart)
-  }
+export function easeQuartOut(action: Action) {
+  return wrapEase(action, easing.easeOutQuart)
 }
 
-export class EaseQuartInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutQuart)
-  }
+export function easeQuartInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutQuart)
 }
 
-export class EaseQuintIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInQuint)
-  }
+export function easeQuintIn(action: Action) {
+  return wrapEase(action, easing.easeInQuint)
 }
 
-export class EaseQuintOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutQuint)
-  }
+export function easeQuintOut(action: Action) {
+  return wrapEase(action, easing.easeOutQuint)
 }
 
-export class EaseQuintInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutQuint)
-  }
+export function easeQuintInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutQuint)
 }
 
-export class EaseSineIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInSine)
-  }
+export function easeSineIn(action: Action) {
+  return wrapEase(action, easing.easeInSine)
 }
 
-export class EaseSineOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutSine)
-  }
+export function easeSineOut(action: Action) {
+  return wrapEase(action, easing.easeOutSine)
 }
 
-export class EaseSineInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutSine)
-  }
+export function easeSineInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutSine)
 }
 
-export class EaseExpoIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInExpo)
-  }
+export function easeExpoIn(action: Action) {
+  return wrapEase(action, easing.easeInExpo)
 }
 
-export class EaseExpoOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutExpo)
-  }
+export function easeExpoOut(action: Action) {
+  return wrapEase(action, easing.easeOutExpo)
 }
 
-export class EaseExpoInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutExpo)
-  }
+export function easeExpoInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutExpo)
 }
 
-export class EaseCircIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInCirc)
-  }
+export function easeCircIn(action: Action) {
+  return wrapEase(action, easing.easeInCirc)
 }
 
-export class EaseCircOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutCirc)
-  }
+export function easeCircOut(action: Action) {
+  return wrapEase(action, easing.easeOutCirc)
 }
 
-export class EaseCircInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutCirc)
-  }
+export function easeCircInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutCirc)
 }
 
-export class EaseBackIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInBack)
-  }
+export function easeBackIn(action: Action) {
+  return wrapEase(action, easing.easeInBack)
 }
 
-export class EaseBackOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutBack)
-  }
+export function easeBackOut(action: Action) {
+  return wrapEase(action, easing.easeOutBack)
 }
 
-export class EaseBackInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutBack)
-  }
+export function easeBackInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutBack)
 }
 
-export class EaseElasticIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInElastic)
-  }
+export function easeElasticIn(action: Action) {
+  return wrapEase(action, easing.easeInElastic)
 }
 
-export class EaseElasticOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInBack)
-    easeOutElastic
-  }
+export function easeElasticOut(action: Action) {
+  return wrapEase(action, easing.easeInBack)
 }
 
-export class EaseElasticInOut {
-  static Create(action: Action) {
-    return wrapEase(action, easeInOutElastic)
-  }
+export function easeElasticInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutElastic)
 }
 
-export class EaseBounceIn {
-  static create(action: Action) {
-    return wrapEase(action, easeInBounce)
-  }
+export function easeBounceIn(action: Action) {
+  return wrapEase(action, easing.easeInBounce)
 }
 
-export class EaseBounceOut {
-  static create(action: Action) {
-    return wrapEase(action, easeOutBounce)
-  }
+export function easeBounceOut(action: Action) {
+  return wrapEase(action, easing.easeOutBounce)
 }
 
-export class EaseBounceInOut {
-  static create(action: Action) {
-    return wrapEase(action, easeInOutBounce)
-  }
+export function easeBounceInOut(action: Action) {
+  return wrapEase(action, easing.easeInOutBounce)
 }
