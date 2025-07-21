@@ -1,6 +1,6 @@
 {
   "name": "pixi-action-ease",
-  "version": "3.0.1",
+  "version": "3.1.1",
   "description": "pixijs action and ease",
   "type": "module",
   "main": "./dist/index.js",
@@ -16,9 +16,6 @@
     "url": "https://github.com/Safe-engine/pixi-action-ease"
   },
   "license": "ISC",
-  "dependencies": {
-    "pixi.js": "^8.5.2"
-  },
   "devDependencies": {
     "typescript": "^5.6.3"
   }

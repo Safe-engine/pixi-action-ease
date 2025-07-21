@@ -1,6 +1,5 @@
-import { Color } from 'pixi.js'
 import Action from './Action'
-
+type Color = any
 export class TintTo extends Action {
   time: number
   tint: any

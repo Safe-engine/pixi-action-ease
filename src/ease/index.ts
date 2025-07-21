@@ -1,11 +1,11 @@
 import Action from '../action/Action'
 import * as easing from './easingsFunctions'
 
-function wrapEase(action: Action, fun) {
+function wrapEase(action: Action, fun): Action {
   return Object.assign({}, action, {
     update: function (sprite, delta, ms) {
       action.update(sprite, fun(delta), fun(ms))
-    }
+    },
   })
 }
 

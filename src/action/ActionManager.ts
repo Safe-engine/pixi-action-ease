@@ -1,17 +1,17 @@
-import { Sprite, EventEmitter, uid } from 'pixi.js'
+// import { EventEmitter, uid } from '@safe-engine/pixi'
 import Action from './Action'
-
-export class Animation extends EventEmitter {
+type Sprite = any
+export class Animation {
   _id: string
   sprite: Sprite
   action: Action
   _started: boolean
   _ended: boolean
   _active: boolean
-  isPause: boolean = false
+  isPause = false
   constructor(sprite: Sprite, action: Action) {
-    super()
-    this._id = `_${uid()}`
+    // super()
+    this._id = `_${Math.random()}`
     this.sprite = sprite
     this.action = action
 
@@ -23,7 +23,7 @@ export class Animation extends EventEmitter {
   update(delta: number, deltaMS: number) {
     if (!this._started) {
       // start event
-      this.emit('start', deltaMS)
+      // this.emit('start', deltaMS)
       this._started = true
       this._active = true
     }
@@ -34,7 +34,7 @@ export class Animation extends EventEmitter {
     }
     if (this._ended && this._active) {
       // end event
-      this.emit('end', deltaMS)
+      // this.emit('end', deltaMS)
       this._active = false
     }
   }
