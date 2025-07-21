@@ -62,7 +62,7 @@ docs/
 tests/
 .editorconfig
 package-lock.json
-README.md
+# README.md
 webpack.config.js
 scripts/
 src/

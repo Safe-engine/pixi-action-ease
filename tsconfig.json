@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
+    "lib": ["ES2020", "dom"],
     "outDir": "dist",
-    "target": "es5",
+    "target": "ES6",
+    "declaration": true,
+    "declarationMap": true,
     "esModuleInterop": true,
-    "lib": [
-      "es2017",
-      "dom",
-      "scripthost"
-    ],
     "skipLibCheck": true,
-    "moduleResolution": "node"
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "types": ["node"],
+    "noEmit": false
   },
-  "include": [
-    "./src/**/*"
-  ],
+  "exclude": ["node_modules", "dist"]
 }
