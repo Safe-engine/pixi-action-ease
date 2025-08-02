@@ -1,5 +1,5 @@
-export { default as Action } from './Action'
 export { ActionManager, actionManager, Animation } from './ActionManager'
+import Action from './Action'
 import { AlphaBy, AlphaTo } from './ActionAlpha'
 import { Blink } from './ActionBlink'
 import { CallFunc } from './ActionCallFunc'
@@ -15,6 +15,7 @@ import { SkewBy, SkewTo } from './ActionSkew'
 import { Spawn } from './ActionSpawn'
 import { TintBy, TintTo } from './ActionTint'
 
+export { Action }
 export const moveTo = MoveTo.create;
 export const scaleTo = ScaleTo.create;
 export const rotateTo = RotateTo.create;
@@ -25,6 +26,7 @@ export const tintTo = TintTo.create;
 export const alphaTo = AlphaTo.create;
 export const blink = Blink.create;
 export const repeat = Repeat.create;
+export const repeatForever = (action: Action) => Repeat.create(action, -1);
 export const sequence = Sequence.create;
 export const spawn = Spawn.create;
 export const delayTime = DelayTime.create;
