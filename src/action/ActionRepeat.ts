@@ -4,19 +4,18 @@ export class Repeat extends Action {
   action: Action
   count: number
   _count: number
-  static create(action: Action, count: number) {
+  static create(action: Action, count?: number) {
     return new Repeat(action, count)
   }
   constructor(action, count) {
     super()
     this.action = action
     this.count = count
-    this._count = this.count
-    if (this._count <= 0) this._count = Infinity
+    this.reset()
   }
   reset() {
-    // this._count = this.count
-    // if (!this._count) this._count = Infinity
+    this._count = this.count
+    if (!this._count) this._count = Infinity
   }
   // if end return true, if not end return false
   update(sprite, delta, deltaMS) {
@@ -26,7 +25,7 @@ export class Repeat extends Action {
       this._count = this._count - 1
     }
     if (this._count <= 0) {
-      // this.reset()
+      this.reset()
       return true
     }
     return false
