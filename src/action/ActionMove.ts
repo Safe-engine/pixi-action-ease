@@ -5,7 +5,10 @@ export class MoveTo extends Action {
   x: any
   y: any
   _time: any
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: Vec2 | number, y?: number) {
+    if (typeof x === 'object') {
+      return new MoveTo(x.x, x.y, t)
+    }
     return new MoveTo(x, y, t)
   }
   constructor(x, y, time) {
@@ -48,7 +51,10 @@ export class MoveBy extends Action {
   _time: any
   tx = null
   ty = null
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: Vec2 | number, y?: number) {
+    if (typeof x === 'object') {
+      return new MoveBy(x.x, x.y, t)
+    }
     return new MoveBy(x, y, t)
   }
   constructor(x, y, time) {

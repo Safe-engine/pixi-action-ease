@@ -5,7 +5,10 @@ export class PivotTo extends Action {
   x: any
   y: any
   _time: any
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: Vec2 | number, y?: number) {
+    if (typeof x === 'object') {
+      return new PivotTo(x.x, x.y, t)
+    }
     return new PivotTo(x, y, t)
   }
   constructor(x, y, time) {
@@ -48,7 +51,10 @@ export class PivotBy extends Action {
   _time: any
   tx = null
   ty = null
-  static create(t: number, { x, y }: { x: number, y: number }) {
+  static create(t: number, x: Vec2 | number, y?: number) {
+    if (typeof x === 'object') {
+      return new PivotBy(x.x, x.y, t)
+    }
     return new PivotBy(x, y, t)
   }
   constructor(x, y, time) {

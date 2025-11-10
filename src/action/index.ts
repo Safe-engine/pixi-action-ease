@@ -39,3 +39,4 @@ export const skewBy = SkewBy.create
 export const pivotBy = PivotBy.create
 export const tintBy = TintBy.create
 export const alphaBy = AlphaBy.create
+export const REPEAT_FOREVER = Number.MAX_VALUE - 1
