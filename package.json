@@ -1,6 +1,6 @@
 {
   "name": "pixi-action-ease",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "pixijs action and ease",
   "type": "module",
   "main": "./dist/index.js",

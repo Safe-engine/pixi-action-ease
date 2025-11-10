@@ -5,6 +5,7 @@ import { Blink } from './ActionBlink'
 import { CallFunc } from './ActionCallFunc'
 import { DelayTime } from './ActionDelay'
 import { FadeIn, FadeOut } from './ActionFade'
+import { JumpBy, JumpTo } from './ActionJump'
 import { MoveBy, MoveTo } from './ActionMove'
 import { PivotBy, PivotTo } from './ActionPivot'
 import { Repeat } from './ActionRepeat'
@@ -17,6 +18,7 @@ import { TintBy, TintTo } from './ActionTint'
 
 export { Action }
 export const moveTo = MoveTo.create
+export const jumpTo = JumpTo.create
 export const scaleTo = ScaleTo.create
 export const rotateTo = RotateTo.create
 export const fadeIn = FadeIn.create
@@ -32,6 +34,7 @@ export const spawn = Spawn.create
 export const delayTime = DelayTime.create
 export const callFunc = CallFunc.create
 export const moveBy = MoveBy.create
+export const jumpBy = JumpBy.create
 export const scaleBy = ScaleBy.create
 export const rotateBy = RotateBy.create
 export const fadeOut = FadeOut.create
